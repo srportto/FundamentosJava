@@ -5,6 +5,10 @@ public class App {
         EstudandoTiposVariaveisPrimitivos primitivos = new EstudandoTiposVariaveisPrimitivos();
         System.out.println(primitivos.toString());
 
+        // casting ou conversao de valores
+        System.out.println(primitivos.castingIntPraShort(5000));    //risco de perder informacao na conversao int > short
+        System.out.println(primitivos.castingDoublePraInt(50.33));   //perde a infromacao da parte fracionada
+
 
     }
 }

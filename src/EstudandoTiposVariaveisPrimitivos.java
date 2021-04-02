@@ -53,4 +53,17 @@ public class EstudandoTiposVariaveisPrimitivos {
                 ", masculinoBoolean = " + masculinoBoolean +
                 '}';
     }
+    public String castingIntPraShort(int number){
+
+        short resultado = (short) number;
+        return "Conversao de int pra short (int > short) \n" +
+                "a numero convertido eh : " + resultado + "\n";
+    }
+
+
+    public String castingDoublePraInt(double number){
+        int resultado = (int) number;
+        return "Conversao de double pra int (obs.: perde a parte fracionada ) \n" +
+                "a numero convertido eh : " + resultado+ "\n";
+    }
 }
