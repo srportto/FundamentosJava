@@ -7,8 +7,10 @@ public class App {
 
         // casting ou conversao de valores
         System.out.println(primitivos.castingIntPraShort(5000));    //risco de perder informacao na conversao int > short
-        System.out.println(primitivos.castingDoublePraInt(50.33));   //perde a infromacao da parte fracionada
+        System.out.println(primitivos.castingDoublePraInt(50.33));   //perde a informação da parte fracionada
 
+        EstudandoTiposVariaveisReferencias referencias = new EstudandoTiposVariaveisReferencias();
+        System.out.println(referencias.toString());
 
     }
 }

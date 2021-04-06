@@ -1,3 +1,8 @@
+/**
+ * @author Caique Porto
+ * @version 1.0
+ */
+
 public class EstudandoTiposVariaveisPrimitivos {
 
     /*tipos primitivos
@@ -14,7 +19,7 @@ public class EstudandoTiposVariaveisPrimitivos {
 
     // para valores de "ponto flutuante"/fracionados
     float pesoFloat;                // 4 bytes	aprox. +/- 3.40282347E+38F (6-7 dígitos decimais significativos)
-    double valorDouble;             // 8 bytes	aprox +/- 1.797693134862311570E+308 (15 dígitos decimais significativos) **** mais usado ***
+    double valorDouble;             // 8 bytes	aprox. +/- 1.797693134862311570E+308 (15 dígitos decimais significativos) **** mais usado ***
 
 
     // outros
@@ -27,12 +32,12 @@ public class EstudandoTiposVariaveisPrimitivos {
         //inteiros
         this.idadeInt = 27;
         this.idadeShort = 27;
-        this.idadeLong = 27;
+        this.idadeLong = 27L;
         this.idadeByte = 27;
 
         // fracionados
-        this.pesoFloat = (float) 1.00;  //casting, pois 1.0 eh double estou forçando float
-        this.valorDouble = 1200.00;
+        this.pesoFloat =1.00f;
+        this.valorDouble = 1200.00d;
 
         //outros
         this.vogalChar = 'a';
@@ -60,7 +65,10 @@ public class EstudandoTiposVariaveisPrimitivos {
                 "a numero convertido eh : " + resultado + "\n";
     }
 
-
+    /**
+     * * @param number
+     * @return string
+     */
     public String castingDoublePraInt(double number){
         int resultado = (int) number;
         return "Conversao de double pra int (obs.: perde a parte fracionada ) \n" +
