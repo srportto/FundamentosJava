@@ -1,4 +1,4 @@
-public class EstudandoTiposVariaveisReferencias {
+public class EstudandoTiposVariaveisReferencias  {
     /*tipos referencia
      * Os programas utilizam as variáveis de tipos por referência para armazenar as localizações de objetos na memória do computador.
      * Esses objetos que são referenciados podem conter várias variáveis de instância e métodos dentro do objeto apontado.
@@ -14,7 +14,7 @@ public class EstudandoTiposVariaveisReferencias {
 
 
     public EstudandoTiposVariaveisReferencias() {
-        this.nomeCriador = "Caique S. porto";
+        this.nomeCriador = "Caique S. Porto";
         this.endereco = new EnderecoCriador("Alexandrini vargas", 06502, 122, "Osasco", "SP");
     }
 
