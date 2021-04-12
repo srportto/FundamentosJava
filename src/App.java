@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 // Classe principal que possui o metodo main para explorar os fundamentos do java
 public class App {
@@ -41,6 +42,7 @@ public class App {
             String[] carros = estudandoArrays.getCarros();
             int nota4[][] = estudandoArrays.getNota4();
 
+            //obtendo dados de um array multidimensional (também pode ser usado para setter dados)
             System.out.println("o tamanho do array matriz 2x2 eh: " + nota4.length);
             System.out.println("o valor de linha:0 e coluna:0 =" + nota4[0][0]);
             System.out.println("o valor de linha:0 e coluna:1 =" + nota4[0][1]);
@@ -66,8 +68,97 @@ public class App {
             estudandoArrays.setNotas1(0, 50);
             int[] nota1 = estudandoArrays.getNotas1();
             System.out.println("O valor que preenchi eh: " + nota1[0]);
+            System.out.println("\n");       //somente para pular linha na sysout
 
-            //obtendo dados de um array multidimensional (também pode ser usado para setter dados)
+            //------------------------------------------------------------------*
+            // Trabalhando com Strings
+            //------------------------------------------------------------------*
+            EstudandoStrings estudandoStrings = new EstudandoStrings();
+
+            //Comparações
+            estudandoStrings.comparacaoErrada(estudandoStrings.getPrimeiroNome01(), estudandoStrings.getPrimeiroNome03());
+            estudandoStrings.comparacaoCorreta01(estudandoStrings.getPrimeiroNome01(), estudandoStrings.getPrimeiroNome03()); //Case sensitive
+            estudandoStrings.comparacaoCorreta01(estudandoStrings.getPrimeiroNome01(), estudandoStrings.getPrimeiroNome02()); //Case sensitive - exemplo erro
+            estudandoStrings.comparacaoCorreta02(estudandoStrings.getPrimeiroNome01(), estudandoStrings.getPrimeiroNome02()); //Nao eh case sensitive
+
+            //obtendo o tamanho de uma string
+            System.out.println(estudandoStrings.getPrimeiroNome01().length());
+
+            //concatenando Strings
+            String nomeCompleto = estudandoStrings.concatenarString(estudandoStrings.getPrimeiroNome01(), estudandoStrings.getSegundoNome01(), estudandoStrings.getUltimoNome01());
+            System.out.println("o nome completo eh: " + nomeCompleto);
+
+            //Pesquisando dentro da String
+            String argumentoPesquisa = new String("Caique");
+            int encontrou = estudandoStrings.encontrarArgumentoDentroDaString(argumentoPesquisa, nomeCompleto); //indexof é case sensitive
+
+            System.out.println("\n");       //somente para pular linha na sysout
+
+            //Criando uma nova string com trecho da anterior
+            String novaStrintg = new String("");
+            if (encontrou == -1) {
+                System.out.println("encontrou ? : " + false);
+            } else {
+                System.out.println("encontrou ? : " + true);
+                novaStrintg = nomeCompleto.substring(encontrou, argumentoPesquisa.length());
+                System.out.println(novaStrintg);
+            }
+            // deixando uma string em caixa alta ou baixa
+            String st1 = novaStrintg.toUpperCase();     //alta
+            System.out.println(st1);
+
+            String st2 = novaStrintg.toLowerCase();     //baixa
+            System.out.println(st2);
+
+            // replace ou substituição
+            String st3 = novaStrintg.replace('e', 'x');
+            System.out.println(st3);
+
+            // Split - quebrando uma String e gerando novas a partir de um delimitador
+            String[] nomes = nomeCompleto.split(" ");
+
+            for (String nome : nomes) {
+                System.out.println("nome: " + nome);
+            }
+
+            //------------------------------------------------------------------*
+            // Trabalhando com collections
+            //------------------------------------------------------------------*
+
+            EstudandoCollections curso1 = new EstudandoCollections();
+            curso1.adicionarAluno("Janaina");
+            curso1.adicionarAluno("Marcos");
+            curso1.adicionarAluno("Caique");
+            curso1.adicionarAluno("Bianca");
+            curso1.adicionarAula ("9999","Java Jedi", "Pedro Henrique Porto");
+            curso1.adicionarAula ("1111","Java Fundamentos", "Pedro Henrique Porto");
+            curso1.adicionarAula ("3333","Java Profissional", "Pedro Henrique Porto");
+            curso1.adicionarAula ("2222","Java Avançado", "Pedro Henrique Porto");
+
+
+
+            System.out.println(curso1.getAlunos());
+            System.out.println(curso1.getAulas()); //foi necessario sobrescrever o metodo toString
+
+            //Ordenando alunos collection de strings
+            curso1.ordenaAlunos();
+            System.out.println("Alunos ordenados:\n"+ curso1.getAlunos());
+
+            //Ordenando aulas collection de objetos criada por min
+            curso1.ordenaAulas();
+            System.out.println("aulas ordenadas:\n"+ curso1.getAulas());
+
+            // O atributo alunos da classe EstudandoCollections é uma coleção (ArrayList) sem usar generics <> então da pra colocar qualquer coisa
+            curso1.alunos.add(1.0); // o generics é justamente pra evitar isso
+            System.out.println("Exemplo sem generics: "+curso1.getAlunos());
+
+            //obtendo o tamanho da coleção
+            System.out.println("O tamanho da collection alunos eh: "+curso1.alunos.size());
+            System.out.println("O tamanho da collection aulas eh: "+curso1.aulas.size());
+
+            //Testando o equals e hashcode
+            curso1.adicionarAula ("2222","Java Avançado", "Pedro Henrique Porto");
+            System.out.println("Test equals e hashcode:\n"+ curso1.getAulas());
 
             //------------------------------------------------------------------*
             // exemplo forçando a cair na exceção
