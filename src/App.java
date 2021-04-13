@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
         try {
             //------------------------------------------------------------------*
-            // Trabalhando com tipos primitivos
+            // #01 - Trabalhando com tipos primitivos
             //------------------------------------------------------------------*
             EstudandoTiposVariaveisPrimitivos primitivos = new EstudandoTiposVariaveisPrimitivos();
             System.out.println(primitivos.toString());
@@ -21,8 +21,9 @@ public class App {
 
             System.out.println("\n");       //somente para pular linha na sysout
 
+
             //------------------------------------------------------------------*
-            //Estruturas de repetição
+            //#02 - Estruturas de repetição
             //------------------------------------------------------------------*
             EstudandoEstruturasDeRepeticao estruturaFor = new EstudandoEstruturasDeRepeticao("for");
             estruturaFor.repetir();
@@ -35,8 +36,10 @@ public class App {
             EstudandoEstruturasDeRepeticao estruturaDoWhile = new EstudandoEstruturasDeRepeticao("do-while");
             estruturaDoWhile.repetir();
             System.out.println("\n");       //somente para pular linha na sysout
+
+
             //------------------------------------------------------------------*
-            //Trabalhando com arrays
+            //#03 - Trabalhando com arrays
             // ------------------------------------------------------------------*
             EstudandoArrays estudandoArrays = new EstudandoArrays(5);
             String[] carros = estudandoArrays.getCarros();
@@ -70,8 +73,9 @@ public class App {
             System.out.println("O valor que preenchi eh: " + nota1[0]);
             System.out.println("\n");       //somente para pular linha na sysout
 
+
             //------------------------------------------------------------------*
-            // Trabalhando com Strings
+            //#04 - Trabalhando com Strings
             //------------------------------------------------------------------*
             EstudandoStrings estudandoStrings = new EstudandoStrings();
 
@@ -121,8 +125,9 @@ public class App {
                 System.out.println("nome: " + nome);
             }
 
+
             //------------------------------------------------------------------*
-            // Trabalhando com collections
+            //#05 - Trabalhando com collections
             //------------------------------------------------------------------*
 
             EstudandoCollections curso1 = new EstudandoCollections();
@@ -130,11 +135,10 @@ public class App {
             curso1.adicionarAluno("Marcos");
             curso1.adicionarAluno("Caique");
             curso1.adicionarAluno("Bianca");
-            curso1.adicionarAula ("9999","Java Jedi", "Pedro Henrique Porto");
-            curso1.adicionarAula ("1111","Java Fundamentos", "Pedro Henrique Porto");
-            curso1.adicionarAula ("3333","Java Profissional", "Pedro Henrique Porto");
-            curso1.adicionarAula ("2222","Java Avançado", "Pedro Henrique Porto");
-
+            curso1.adicionarAula("9999", "Java Jedi", "Pedro Henrique Porto");
+            curso1.adicionarAula("1111", "Java Fundamentos", "Pedro Henrique Porto");
+            curso1.adicionarAula("3333", "Java Profissional", "Pedro Henrique Porto");
+            curso1.adicionarAula("2222", "Java Avançado", "Pedro Henrique Porto");
 
 
             System.out.println(curso1.getAlunos());
@@ -142,24 +146,98 @@ public class App {
 
             //Ordenando alunos collection de strings
             curso1.ordenaAlunos();
-            System.out.println("Alunos ordenados:\n"+ curso1.getAlunos());
+            System.out.println("Alunos ordenados:\n" + curso1.getAlunos());
 
             //Ordenando aulas collection de objetos criada por min
             curso1.ordenaAulas();
-            System.out.println("aulas ordenadas:\n"+ curso1.getAulas());
+            System.out.println("aulas ordenadas:\n" + curso1.getAulas());
 
             // O atributo alunos da classe EstudandoCollections é uma coleção (ArrayList) sem usar generics <> então da pra colocar qualquer coisa
             curso1.alunos.add(1.0); // o generics é justamente pra evitar isso
-            System.out.println("Exemplo sem generics: "+curso1.getAlunos());
+            System.out.println("Exemplo sem generics: " + curso1.getAlunos());
 
             //obtendo o tamanho da coleção
-            System.out.println("O tamanho da collection alunos eh: "+curso1.alunos.size());
-            System.out.println("O tamanho da collection aulas eh: "+curso1.aulas.size());
+            System.out.println("O tamanho da collection alunos eh: " + curso1.alunos.size());
+            System.out.println("O tamanho da collection aulas eh: " + curso1.aulas.size());
 
             //Testando o equals e hashcode
-            curso1.adicionarAula ("2222","Java Avançado", "Pedro Henrique Porto");
-            System.out.println("Test equals e hashcode:\n"+ curso1.getAulas());
+            curso1.adicionarAula("2222", "Java Avançado", "Pedro Henrique Porto");
+            System.out.println("Test equals e hashcode:\n" + curso1.getAulas());
 
+
+            //------------------------------------------------------------------*
+            //#06 - trabalhando com calculos
+            //------------------------------------------------------------------*
+            EstudandoCalculos calculo01 = new EstudandoCalculos();
+
+            int[] numerosPraCalculos = new int[]{1, 2, 5};
+
+            calculo01.somarNumeros(numerosPraCalculos);
+            calculo01.subtrairNumeros(10, 2);
+            calculo01.multiplicarNumeros(numerosPraCalculos);
+            calculo01.dividirNumeros(13, 5);
+            calculo01.dividirNumeros(10, 5);
+            calculo01.verificarNumeroPar(50);
+            calculo01.verificarNumeroPar(51);
+            calculo01.elevarNumeroAUmaPotencia(2, 3);
+
+            //forçando exception na divisao por 0
+            //calculo01.dividirNumeros(13,0);
+
+
+            //------------------------------------------------------------------*
+            //#07 - conversao de tipos (numeros e strings0
+            //------------------------------------------------------------------*
+            ConversoesdeTipos converTipos = new ConversoesdeTipos();
+
+            converTipos.deStringParaInterger("9");
+            converTipos.deIntergerParaString(9);
+
+            //------------------------------------------------------------------*
+            //#08 - Usando Enums
+            //------------------------------------------------------------------*
+            TipoConta tipoConta01 = TipoConta.CORRENTE;
+            System.out.println("Usando enum...tipo de conta= " + tipoConta01);
+
+            TipoConta tipoConta02 = TipoConta.INVESTIMENTO;
+            System.out.println("Usando enum...tipo de conta= " + tipoConta02);
+
+            //------------------------------------------------------------------*
+            //#09 - Trabalhando com Expressão Regular
+            //------------------------------------------------------------------*
+            //Procura 2 dígitos no texto
+            boolean valor = "74".matches("\\d{2}");
+            System.out.println(valor);
+
+            //Procura mais de 2 dígitos no texto
+            valor = "211".matches("\\d{9,}");
+            System.out.println(valor);
+
+            //Procura dígitos entre os valores de 2 e 5
+            valor = "2121".matches("\\d{2,5}");
+            System.out.println(valor);
+
+            //Procura dígito entre 0 e 1 vezes
+            valor = "22".matches(".?");
+            System.out.println(valor);
+
+            //Procura dígito entre 0 e mais vezes
+            valor = "75411".matches(".*");
+            System.out.println(valor);
+
+            //Procura dígito entre 1 e mais vezes
+            valor = "".matches(".+");
+            System.out.println(valor);
+
+            //Cria expressão regular resumida da data
+            String data = "02/05/1995";
+            valor = data.matches("\\d{2}/\\d{2}/\\d{4}");
+            System.out.println("Data: " + valor);
+
+            //Cria a expressão regular resumida do cep
+            String cep = "8545-222";
+            valor = cep.matches("\\d{4}-\\d{3}");
+            System.out.println("Cep: " + valor);
             //------------------------------------------------------------------*
             // exemplo forçando a cair na exceção
             //------------------------------------------------------------------*
