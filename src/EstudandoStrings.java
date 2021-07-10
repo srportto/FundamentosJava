@@ -34,8 +34,8 @@ public class EstudandoStrings {
 
     public void comparacaoErrada(String nome1, String nome2) {
         if (nome1 == nome2) {
-            // se o conteudo das strings forem o mesmo, mas a forma de declaracão for diferente nunca ira cai aqui
-            // exemplo: nome1 foi declarada , teve o objeto de sreing criado e passando valor, já
+            // se o conteudo das strings forem o mesmo, mas a forma de declaracão for diferente nunca ira cair aqui
+            // exemplo: nome1 foi declarada , teve o objeto de string criado e passando valor, já
             //          nome2 foi apenas declarada e passado valor
             System.out.println("sim , sao iguais");
         } else {
