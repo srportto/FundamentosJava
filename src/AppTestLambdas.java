@@ -9,7 +9,7 @@ public class AppTestLambdas {
 
         //populando o arrayList
         var agd1 = new Agendamento("7375", "27459", "1", 1, BigDecimal.valueOf(1.1));
-        var agd2 = new Agendamento("7375", "27459", "1", 5, BigDecimal.valueOf(1.1));
+        var agd2 = new Agendamento("7375", "27459", "1", 5, BigDecimal.valueOf(1.33));
 
         for (int j = 1; j <= 5; j++) {
             agendamentos.add(agd1);
